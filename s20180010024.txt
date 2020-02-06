@@ -1,0 +1,338 @@
+class Address
+{
+	String street;
+	String city;
+	int pin;
+	Address(String street,String city,int pin)
+	{
+		this.street = street;
+		this.city = city;
+		this.pin = pin;
+	}
+	Address(String street,String city)
+	{
+		this.street = street;
+		this.city = city;
+	}
+	void set(String street,String city,int pin)
+	{
+		this.street = street;
+		this.city = city;
+		this.pin = pin;
+	}
+	void set(String street,String city)
+	{
+		this.street = street;
+		this.city = city;
+	}
+	String get()
+	{
+		return this.street;
+	}
+	void display()
+	{
+		System.out.println("street : "+street+"city : "+city+"pin : "+pin);
+	}
+
+}
+
+class Person 
+{
+  String name;
+  Address address;
+  Person(String name,Address address)
+  {
+  	this.name=name;
+  	this.address = address;
+  }
+  void set(String name,Address address)
+  {
+  	this.name=name;
+  	this.address = address;
+  }
+  void set(Address address)
+  {
+  	this.address = address;
+  }
+  String get()
+  {
+  	return this.name;
+  }
+  void display()
+	{
+		System.out.println("Person Name: "+this.name);
+		address.display();
+	}
+}
+
+class Employee extends Person
+{
+	int empy_id;
+	Employee()
+	{
+		super("name");
+	}
+	Employee(int empy_id)
+	{
+		this.empy_id = empy_id;
+	}
+	void set(int empy_id)
+	{
+		this.empy_id = empy_id;
+	}
+	int get()
+	{
+		this.empy_id;
+	}
+	void display()
+  {
+  	super.display();
+  	System.out.println("It is employee class");
+  	System.out.println("employee with id "+empy_id);
+  }
+}
+
+class Design_Engg extends Employee
+{
+	int experience;
+	Design_Engg(int experience,Employee emp)
+	{
+		this.experience= experience;
+	}
+	void set(int experience)
+	{
+		this.experience = experience;
+	}
+	int get()
+	{
+		return this.experience;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("It is  design engineer class");
+		System.out.prinln("Experience of an Employee: "+this.experience);
+	}
+}
+
+class SW_Engg extends Employee
+{
+	int experience;
+	SW_Engg(int experience)
+	{
+		this.experience= experience;
+	}
+	void set(int experience)
+	{
+		this.experience = experience;
+	}
+	int get()
+	{
+		return this.experience;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("It is  software engineer class");
+		System.out.prinln("Experience of an Employee: "+this.experience);
+	}
+}
+
+class Manager extends Person
+{
+	int experience;
+	Manager(int experience)
+	{
+		this.experience= experience;
+	}
+	void set(int experience)
+	{
+		this.experience = experience;
+	}
+	int get()
+	{
+		return this.experience;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("It is  manager class");
+		System.out.println("Experience of an Employee: "+this.experience);
+	}
+}
+
+class Ceo extends Person
+{
+	int experience;
+	Ceo(int experience)
+	{
+		this.experience= experience;
+	}
+	void set(int experience)
+	{
+		this.experience = experience;
+	}
+	int get()
+	{
+		return this.experience;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("It is ceo class");
+		System.out.println("Experience of an Employee: "+this.experience);
+	}
+}
+
+class Vp extends Person
+{
+	int experience;
+	Vp(int experience)
+	{
+		this.experience= experience;
+	}
+	void set(int experience)
+	{
+		this.experience = experience;
+	}
+	int get()
+	{
+		return this.experience;
+	}
+	void display()
+	{
+		super.display();
+		System.out.println("It is Vp class");
+		System.out.println("Experience of an Employee: "+this.experience);
+	}
+
+}
+class organisation
+{
+	int name;
+	int id;
+	organisation(int name,int id)
+	{
+		this.name = name;
+		this.id = id;
+	}
+	void set(int name,int id)
+	{
+		this.name = name;
+		this.id = id;
+	}
+	void set(int name)
+	{
+		this.name = name;
+	}
+	String get()
+	{
+		return this.name;
+	}
+	void display()
+	{
+		System.out.println("Organisaton Name: "+this.name);
+	}
+}
+
+class SW_Engg extends organisation
+{
+	String swname;
+	Person sw = new Person();
+    SW_Engg(String oname,String swname,Person sw) 
+	{
+		super(oname);
+		this.swame = swame;
+		this.sw = sw;
+	}
+    String get() 
+    {
+		return swname;
+	}
+	void set(String swname) 
+	{
+		this.swname = swname;
+	}
+}
+
+class Finance extends organisation
+{
+	int amount;
+	Person fi = new Person();
+    Finance(String oname,int amount,Person fi) 
+    {
+		super(oname);
+		this.fi = fi;
+		this.amount = amount;
+	}
+	int get() 
+	{
+		return amount;
+	}
+	void set(int amount) 
+	{
+		this.amount = amount;
+	}
+  
+}
+class HW_Design extends organisation
+{
+	public String Hwname;
+	Person h = new Person();
+	HW_Design(String oname,String Hwname,Person h) 
+	{
+		super(oname);
+		this.Hwname = Hwname;
+		this.h = h;
+	}
+
+	String get() 
+	{
+		return Hwname;
+	}
+
+	void set(String Hwname) 
+	{
+		this.Hwname = Hwname;
+	}
+}
+
+class HR extends organisation
+{
+	 Person r = new Person();
+	HR(Person r,String oname) 
+	{
+		super(oname);
+		this.r = r;
+	}	
+}
+
+class Fabr extends HW_Design
+{
+	Person r = new Person();
+	public Fabr(Person r,String oname,String hwname,Person h) 
+	{
+		super(oname,hwname,h);
+		this.r = r;
+	}
+
+}
+
+class Desn extends HW_Design
+{
+	Person r = new Person();
+	public Design(Person r,String oname,String hwname,Person h) 
+	{
+		super(oname,hwname,h);
+		this.r = r;
+	}
+
+}
+
+class Lab8
+{
+	public static void main(String[] args)
+	{
+
+	}
+}
